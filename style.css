@@ -19,6 +19,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--text-color);
+    overflow: hidden;
 }
 a {
     text-decoration: none;
@@ -129,7 +130,7 @@ nav ul a:hover::after {
 /* Popup Section */
 .pop-home {
     position: absolute;
-    top: -110%;
+    top: -120%;
     left: 0;
     right: 0;
     padding: 0.5rem;
