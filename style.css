@@ -19,8 +19,6 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--text-color);
-    position: relative;
-    min-height: 100vh;
 }
 a {
     text-decoration: none;
@@ -223,9 +221,6 @@ th {
 td {
     background-color: #e3e3e3;
     font-weight: 500;
-}
-.download-btn {
-    margin-bottom: 4rem;
 }
 
 /* Footer */
