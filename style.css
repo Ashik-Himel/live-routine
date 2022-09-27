@@ -79,7 +79,10 @@ nav ul a:hover::after {
 
 /* Card Section */
 .home-main {
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
     text-align: center;
 }
 .home-main .batch, .routine-main .batch {
@@ -132,14 +135,15 @@ nav ul a:hover::after {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    inset: 0;
+    top: -100%;
+    left: 0;
+    right: 0;
     padding: 0.5rem;
     text-align: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    transition: top 0.3s ease;
 }
 .pop-home.active {
-    transform: translate(0);
+    top: 0;
 }
 .pop {
     background-color: white;
