@@ -131,15 +131,15 @@ nav ul a:hover::after {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    bottom: 100%;
+    top: -100%;
     left: 0;
     right: 0;
     padding: 0.5rem;
     text-align: center;
-    transition: bottom 0.3s ease;
+    transition: top 0.3s ease;
 }
 .pop-home.active {
-    bottom: 0;
+    top: 0;
 }
 .pop {
     background-color: white;
