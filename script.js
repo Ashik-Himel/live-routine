@@ -27,27 +27,68 @@ const room = document.querySelector(".room span");
 const timeStatus = document.querySelector(".time-status");
 const time = document.querySelector(".time");
 
+const nextCard1 = document.querySelector(".card-1");
 const nextCls1 = document.querySelector(".card-1 .next-cls-code");
 const nextTeacher1 = document.querySelector(".card-1 .next-teacher span");
 const nextRoom1 = document.querySelector(".card-1 .next-room span");
 
+const nextCard2 = document.querySelector(".card-2");
 const nextCls2 = document.querySelector(".card-2 .next-cls-code");
 const nextTeacher2 = document.querySelector(".card-2 .next-teacher span");
 const nextRoom2 = document.querySelector(".card-2 .next-room span");
 
+const nextCard3 = document.querySelector(".card-3");
 const nextCls3 = document.querySelector(".card-3 .next-cls-code");
 const nextTeacher3 = document.querySelector(".card-3 .next-teacher span");
 const nextRoom3 = document.querySelector(".card-3 .next-room span");
 
+const nextCard4 = document.querySelector(".card-4");
+const nextCls4 = document.querySelector(".card-4 .next-cls-code");
+const nextTeacher4 = document.querySelector(".card-4 .next-teacher span");
+const nextRoom4 = document.querySelector(".card-4 .next-room span");
+
 const noCls = document.querySelector(".no-cls");
-
-
 
 function main() {
     const d = new Date();
-    const day = 5; // for test
+    const day = d.getDay();
 
-    function clsComponent(clsStatus, clsnNow, timeStatusNow) {
+    let clsT08_30 = new Date();
+    clsT08_30.setHours(8);clsT08_30.setMinutes(30);clsT08_30.setSeconds(0);
+    let miliT08_30 = clsT08_30 - d;
+    let remainT08_30 = new Date(miliT08_30);
+    
+    let clsT10_00 = new Date();
+    clsT10_00.setHours(10);clsT10_00.setMinutes(0);clsT10_00.setSeconds(0);
+    let miliT10_00 = clsT10_00 - d;
+    let remainT10_00 = new Date(miliT10_00);
+
+    let clsT11_30 = new Date();
+    clsT11_30.setHours(11);clsT11_30.setMinutes(30);clsT11_30.setSeconds(0);
+    let miliT11_30 = clsT11_30 - d;
+    let remainT11_30 = new Date(miliT11_30);
+
+    let clsT01_00 = new Date();
+    clsT01_00.setHours(13);clsT01_00.setMinutes(0);clsT01_00.setSeconds(0);
+    let miliT01_00 = clsT01_00 - d;
+    let remainT01_00 = new Date(miliT01_00);
+
+    let clsT02_00 = new Date();
+    clsT02_00.setHours(14);clsT02_00.setMinutes(0);clsT02_00.setSeconds(0);
+    let miliT02_00 = clsT02_00 - d;
+    let remainT02_00 = new Date(miliT02_00);
+
+    let clsT03_30 = new Date();
+    clsT03_30.setHours(15);clsT03_30.setMinutes(30);clsT03_30.setSeconds(0);
+    let miliT03_30 = clsT03_30 - d;
+    let remainT03_30 = new Date(miliT03_30);
+
+    let clsT05_00 = new Date();
+    clsT05_00.setHours(17);clsT05_00.setMinutes(0);clsT05_00.setSeconds(0);
+    let miliT05_00 = clsT05_00 - d;
+    let remainT05_00 = new Date(miliT05_00);
+
+    function clsComponent(clsStatus, clsnNow, timeStatusNow, timeStatic, remainNow, remainNext1=undefined, remainNext2=undefined, remainNext3=undefined, remainNext4=undefined) {
         runUp.innerHTML = clsStatus;
         if (clsStatus == "Upcomming") {
             runUp.style.backgroundColor = "var(--yallow-color)";
@@ -58,12 +99,119 @@ function main() {
         timeStatus.innerHTML = timeStatusNow;
         if (timeStatusNow == "Next Class") {
             time.style.display = "block";
+            time.innerHTML = timeStatic;
         }
-        time.innerHTML = `00:00:00`;
+        else {
+            time.innerHTML = `${remainNow.getHours()-6}:${remainNow.getMinutes()}:${remainNow.getSeconds()}`;
+        }
+        if (remainNext1 != undefined) {
+            nextCard1.style.display = "block";
+            nextCls1.innerHTML = remainNext1[0];
+            nextTeacher1.innerHTML = remainNext1[1];
+            nextRoom1.innerHTML = remainNext1[2];
+        }
+        if (remainNext2 != undefined) {
+            nextCard2.style.display = "block";
+            nextCls2.innerHTML = remainNext2[0];
+            nextTeacher2.innerHTML = remainNext2[1];
+            nextRoom2.innerHTML = remainNext2[2];
+        }
+        if (remainNext3 != undefined) {
+            nextCard3.style.display = "block";
+            nextCls3.innerHTML = remainNext3[0];
+            nextTeacher3.innerHTML = remainNext3[1];
+            nextRoom3.innerHTML = remainNext3[2];
+        }
+        if (remainNext4 != undefined) {
+            nextCard4.style.display = "block";
+            nextCls4.innerHTML = remainNext4[0];
+            nextTeacher4.innerHTML = remainNext4[1];
+            nextRoom4.innerHTML = remainNext4[2];
+        }
+        if (remainNext1 == undefined && remainNext2 == undefined && remainNext3 == undefined && remainNext4 == undefined) {
+            noCls.style.display = "block";
+        }
     }
 
     if (day == 5) {
-        clsComponent("Upcomming", monday.T10_00, "Next Class");
+        clsComponent("Upcomming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+    }
+    else if (day == 6) {
+        clsComponent("Upcomming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+    }
+    else if (day == 0) {
+        clsComponent("Upcomming", monday.T10_00, "Next Class", "Tomorrow :: 10:00AM");
+    }
+    else if (day == 1) {
+        if (miliT10_00 > 0) {
+            clsComponent("Upcomming", monday.T10_00, "Start in", undefined, remainT10_00, monday.T10_00, monday.T11_30);
+        }
+        else if (miliT11_30 > 0) {
+            clsComponent("Running", monday.T10_00, "End in", undefined, remainT11_30, monday.T11_30);
+        }
+        else if (miliT11_30 < 0) {
+            clsComponent("Upcomming", tuesday.T08_30, "Next Class", "Tomorrow :: 8:30AM");
+        }
+    }
+    else if (day == 2) {
+        if (miliT08_30 > 0) {
+            clsComponent("Upcomming", tuesday.T08_30, "Start in", undefined, remainT08_30, tuesday.T08_30, tuesday.T10_00, tuesday.T11_30)
+        }
+        else if (miliT10_00 > 0) {
+            clsComponent("Running", tuesday.T08_30, "End in", undefined, remainT10_00, tuesday.T10_00, tuesday.T11_30);
+        }
+        else if (miliT11_30 > 0) {
+            clsComponent("Running", tuesday.T10_00, "End in", undefined, remainT11_30, tuesday.T11_30)
+        }
+        else if (miliT01_00 > 0) {
+            clsComponent("Running", tuesday.T11_30, "End in", undefined, remainT01_00);
+        }
+        else if (miliT01_00 < 0) {
+            clsComponent("Upcomming", wednesday.T11_30, "Next Class", "Tomorrow :: 11:30AM");
+        }
+    }
+    else if (day == 3) {
+        if (miliT11_30 > 0) {
+            clsComponent("Upcomming", wednesday.T11_30, "Start in", undefined, remainT11_30, wednesday.T11_30, wednesday.T02_00, wednesday.T03_30);
+        }
+        else if (miliT01_00 > 0) {
+            clsComponent("Running", wednesday.T11_30, "End in", undefined, remainT01_00, wednesday.T02_00, wednesday.T03_30);
+        }
+        else if (miliT02_00 > 0) {
+            clsComponent("Upcomming", wednesday.T02_00, "Start in", undefined, remainT02_00, wednesday.T02_00, wednesday.T03_30);
+        }
+        else if (miliT03_30 > 0) {
+            clsComponent("Running", wednesday.T02_00, "End in", undefined, remainT03_30, wednesday.T03_30);
+        }
+        else if (miliT05_00 > 0) {
+            clsComponent("Running", wednesday.T03_30, "End in", undefined, remainT05_00);
+        }
+        else if (miliT05_00 < 0) {
+            clsComponent("Upcomming", thursday.T08_30, "Next Class", "Tomorrow :: 8:30AM");
+        }
+    }
+    else if (day == 4) {
+        if (miliT08_30 > 0) {
+            clsComponent("Upcomming", thursday.T08_30, "Start in", undefined, remainT08_30, thursday.T08_30, thursday.T10_00, thursday.T11_30, thursday.T02_00);
+        }
+        else if (miliT10_00 > 0) {
+            clsComponent("Running", thursday.T08_30, "End in", undefined, remainT10_00, thursday.T10_00, thursday.T11_30, thursday.T02_00);
+        }
+        else if (miliT11_30 > 0) {
+            clsComponent("Running", thursday.T10_00, "End in", undefined, remainT11_30, thursday.T11_30, thursday.T02_00);
+        }
+        else if (miliT01_00 > 0) {
+            clsComponent("Running", thursday.T11_30, "End in", undefined, remainT01_00, thursday.T02_00);
+        }
+        else if (miliT02_00 > 0) {
+            clsComponent("Upcomming", thursday.T02_00, "Start in", undefined, remainT02_00, thursday.T02_00);
+        }
+        else if (miliT03_30 > 0) {
+            clsComponent("Running", thursday.T02_00, "End in", undefined, remainT03_30);
+        }
+        else if (miliT03_30 < 0) {
+            clsComponent("Upcomming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+        }
     }
 };
 
