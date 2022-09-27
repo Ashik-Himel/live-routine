@@ -19,7 +19,6 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--text-color);
-    overflow: hidden;
 }
 a {
     text-decoration: none;
@@ -79,10 +78,7 @@ nav ul a:hover::after {
 
 /* Card Section */
 .home-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
+    margin-top: 50px;
     text-align: center;
 }
 .home-main .batch, .routine-main .batch {
@@ -135,15 +131,15 @@ nav ul a:hover::after {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    top: -100%;
+    bottom: 100%;
     left: 0;
     right: 0;
     padding: 0.5rem;
     text-align: center;
-    transition: top 0.3s ease;
+    transition: bottom 0.3s ease;
 }
 .pop-home.active {
-    top: 0;
+    bottom: 0;
 }
 .pop {
     background-color: white;
