@@ -88,10 +88,16 @@ function main() {
     let miliT05_00 = clsT05_00 - d;
     let remainT05_00 = new Date(miliT05_00);
 
+    function nextCardFunc(nextCard, nextCls, nextTeacher, nextRoom, remainNext) {
+        nextCard.style.display = "block";
+        nextCls.innerHTML = remainNext[0];
+        nextTeacher.innerHTML = remainNext[1];
+        nextRoom.innerHTML = remainNext[2];
+    }
     function clsComponent(clsStatus, clsnNow, timeStatusNow, timeStatic, remainNow, remainNext1=undefined, remainNext2=undefined, remainNext3=undefined, remainNext4=undefined) {
         runUp.innerHTML = clsStatus;
         if (clsStatus == "Upcoming") {
-            runUp.style.backgroundColor = "var(--yallow-color)";
+            runUp.style.backgroundColor = "#f39c12";
         }
         clsCode.innerHTML = clsnNow[0];
         teacher.innerHTML = clsnNow[1];
@@ -105,32 +111,25 @@ function main() {
             time.innerHTML = `${remainNow.getHours()-6}:${remainNow.getMinutes()}:${remainNow.getSeconds()}`;
         }
         if (remainNext1 != undefined) {
-            nextCard1.style.display = "block";
-            nextCls1.innerHTML = remainNext1[0];
-            nextTeacher1.innerHTML = remainNext1[1];
-            nextRoom1.innerHTML = remainNext1[2];
+            nextCardFunc(nextCard1, nextCls1, nextTeacher1, nextRoom1, remainNext1);
         }
+        else {nextCard1.style.display = "none";}
         if (remainNext2 != undefined) {
-            nextCard2.style.display = "block";
-            nextCls2.innerHTML = remainNext2[0];
-            nextTeacher2.innerHTML = remainNext2[1];
-            nextRoom2.innerHTML = remainNext2[2];
+            nextCardFunc(nextCard2, nextCls2, nextTeacher2, nextRoom2, remainNext2);
         }
+        else {nextCard2.style.display = "none";}
         if (remainNext3 != undefined) {
-            nextCard3.style.display = "block";
-            nextCls3.innerHTML = remainNext3[0];
-            nextTeacher3.innerHTML = remainNext3[1];
-            nextRoom3.innerHTML = remainNext3[2];
+            nextCardFunc(nextCard3, nextCls3, nextTeacher3, nextRoom3, remainNext3);
         }
+        else {nextCard3.style.display = "none";}
         if (remainNext4 != undefined) {
-            nextCard4.style.display = "block";
-            nextCls4.innerHTML = remainNext4[0];
-            nextTeacher4.innerHTML = remainNext4[1];
-            nextRoom4.innerHTML = remainNext4[2];
+            nextCardFunc(nextCard4, nextCls4, nextTeacher4, nextRoom4, remainNext4);
         }
+        else {nextCard4.style.display = "none";}
         if (remainNext1 == undefined && remainNext2 == undefined && remainNext3 == undefined && remainNext4 == undefined) {
             noCls.style.display = "block";
         }
+        else {noCls.style.display = "none";}
     }
 
     if (day == 5) {

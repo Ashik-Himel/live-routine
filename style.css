@@ -3,7 +3,6 @@
 :root {
     --primary-color: #ff1e38;
     --green-color: #2ecc71;
-    --yallow-color: #f39c12;
     --text-color: #3e3e3e;
     --gradient-1: linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
     --gradient-2: linear-gradient(90deg, hsla(318, 44%, 51%, 1) 0%, hsla(347, 94%, 48%, 1) 100%);
@@ -166,7 +165,6 @@ nav ul a:hover::after {
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 20px;
-    display: none;
 }
 .card-2 {
     background: var(--gradient-2);
@@ -195,7 +193,6 @@ nav ul a:hover::after {
     color: var(--green-color);
     font-size: 1.2rem;
     font-weight: 500;
-    display: none;
 }
 .pop-close {
     margin: 1.5rem 0;
