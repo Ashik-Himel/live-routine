@@ -131,9 +131,8 @@ nav ul a:hover::after {
 
 /* Popup Section */
 .pop-home {
-    width: 100vw;
     position: absolute;
-    top: -100%;
+    top: -200%;
     left: 0;
     right: 0;
     padding: 0.5rem;
