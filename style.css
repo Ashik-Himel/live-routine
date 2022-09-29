@@ -3,6 +3,7 @@
 :root {
     --primary-color: #ff1e38;
     --green-color: #2ecc71;
+    --yellow-color: #f39c12;
     --text-color: #3e3e3e;
     --gradient-1: linear-gradient(90deg, hsla(324, 91%, 46%, 1) 0%, hsla(18, 100%, 49%, 1) 100%);
     --gradient-2: linear-gradient(90deg, hsla(318, 44%, 51%, 1) 0%, hsla(347, 94%, 48%, 1) 100%);
