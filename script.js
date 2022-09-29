@@ -97,8 +97,11 @@ function main() {
     function clsComponent(clsStatus, clsnNow, timeStatusNow, timeStatic, remainNow, remainNext1=undefined, remainNext2=undefined, remainNext3=undefined, remainNext4=undefined) {
         runUp.innerHTML = clsStatus;
         if (clsStatus == "Upcoming") {
-            runUp.style.backgroundColor = "#f39c12";
+            runUp.style.backgroundColor = "var(--yellow-color)";
         }
+	else {
+	    runUp.style.backgroundColor = "var(--green-color)";
+	}
         clsCode.innerHTML = clsnNow[0];
         teacher.innerHTML = clsnNow[1];
         room.innerHTML = clsnNow[2];
