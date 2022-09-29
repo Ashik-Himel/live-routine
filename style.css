@@ -23,6 +23,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--text-color);
+    z-index: -1;
 }
 a {
     text-decoration: none;
@@ -139,6 +140,7 @@ nav ul a:hover::after {
     padding: 0.5rem;
     text-align: center;
     transition: top 0.5s ease;
+    z-index: 1;
 }
 .pop-home.active {
     top: 0;
@@ -150,6 +152,7 @@ nav ul a:hover::after {
     max-width: 700px;
     margin: 0 auto;
     box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.35);
+    z-index: 2;
 }
 .pop-title {
     color: var(--primary-color);
@@ -245,9 +248,11 @@ footer {
     padding: 1rem 0;
     text-align: center;
     font-size: 1.2rem;
+    z-index: -2;
 }
 footer span {
     font-family: 'Lobster', cursive;
+    z-index: -3;
 }
 
 /* Media Queries */
