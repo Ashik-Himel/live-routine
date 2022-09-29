@@ -25,7 +25,6 @@ body {
     color: var(--text-color);
     position: relative;
     min-height: 1vh;
-    max-height: calc(max-content + 5rem);
     z-index: 1;
 }
 a {
