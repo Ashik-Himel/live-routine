@@ -151,7 +151,10 @@ function main() {
         else if (miliT11_30 > 0) {
             clsComponent("Running", monday.T10_00, "End in", undefined, remainT11_30, monday.T11_30);
         }
-        else if (miliT11_30 < 0) {
+	else if (miliT01_00 > 0) {
+            clsComponent("Running", monday.T11_30, "End in", undefined, remainT01_00);
+        }
+        else if (miliT01_00 < 0) {
             clsComponent("Upcoming", tuesday.T08_30, "Next Class", "Tomorrow :: 8:30AM");
         }
     }
