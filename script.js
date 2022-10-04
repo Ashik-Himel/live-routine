@@ -111,6 +111,7 @@ function main() {
             time.innerHTML = timeStatic;
         }
         else {
+	    time.style.display = "inline";
             time.innerHTML = `${remainNow.getHours()-6}:${remainNow.getMinutes()}:${remainNow.getSeconds()}`;
         }
         if (remainNext1 != undefined) {
