@@ -86,7 +86,7 @@ nav ul a:hover::after {
     margin-top: 50px;
     text-align: center;
 }
-.home-main .batch, .routine-main .batch {
+.home-main .title, .routine-main .title, .batch-main .title {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -238,6 +238,34 @@ td {
     font-weight: 500;
 }
 
+/* Batch Section */
+.batch-main {
+    margin-top: 50px;
+    text-align: center;
+    display: none;
+}
+.batch-main .change-area {
+    display: flex;
+    gap: 2rem;
+}
+.batch-main .change-area > * {
+    flex: 1;
+}
+.batch-main .change-area > * > * {
+    display: block;
+    margin: 0 auto;
+}
+.batch-main .change-area label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.batch-main .change-area select {
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 50px;
+}
+
 /* Footer */
 footer {
     position: absolute;
@@ -253,6 +281,9 @@ footer span {
 }
 
 /* Media Queries */
+@media screen and (max-width: 576px) {
+    .change-area {flex-direction: column;}
+}
 @media screen and (min-width: 576px) {
     .container {width: 540px;}
 }

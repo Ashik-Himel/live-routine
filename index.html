@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Header Part -->
 <header>
     <div class="container">
         <div class="logo">
@@ -19,6 +20,7 @@
         </div>
         <nav class="nav">
             <ul>
+                <li><a class="batch" href="#">Batch</a></li>
                 <li><a class="home active" href="#">Home</a></li>
                 <li><a class="routine" href="#">Routine</a></li>
             </ul>
@@ -26,9 +28,10 @@
     </div>
 </header>
 
+<!-- Live Class Section -->
 <section class="home-main">
     <div class="container">
-        <h1 class="batch">Batch 57A</h1>
+        <h1 class="title">Batch 57A</h1>
         <div class="card">
             <span class="run-up">Running</span>
             <h2 class="cls-code">MATHM-129</h2>
@@ -42,6 +45,7 @@
     </div>
 </section>
 
+<!-- Live Class Popup -->
 <section class="pop-home">
     <div class="pop">
         <h2 class="pop-title">Upcoming Classes</h2>
@@ -80,9 +84,10 @@
     </div>
 </section>
 
+<!-- Routine Section -->
 <section class="routine-main">
     <div class="container">
-        <h1 class="batch">Batch 57A</h1>
+        <h1 class="title">Batch 57A</h1>
         <div class="table-div">
             <table>
                 <thead>
@@ -137,11 +142,45 @@
     </div>
 </section>
 
+<!-- Batch Section -->
+<section class="batch-main">
+    <div class="container">
+        <h1 class="title">Change Batch</h1>
+        <div class="change-area">
+            <div class="batch-area">
+                <label for="change-batch">Select Your Batch</label>
+                <select name="change-batch" id="change-batch">
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57" selected>57</option>
+                    <option value="58">58</option>
+                </select>
+            </div>
+            <div class="section-area">
+                <label for="change-section">Select Your Section</label>
+                <select name="change-section" id="change-section">
+                    <option value="A" selected>A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer>
     <span>Developed by </span><a href="https://www.facebook.com/ashikujjaman.himel" target="_blank">Ashik-Himel</a>
 </footer>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9078153097497166" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 <script src="index.js"></script>
 </body>
