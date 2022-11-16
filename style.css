@@ -64,7 +64,7 @@ header .logo a {
 }
 nav ul {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 nav ul .active {
     color: var(--primary-color);
