@@ -1,24 +1,23 @@
 const monday = {
-    T10_00 : ["MATHM-129", "MBH", 304],
-    T11_30 : ["EENG-122", "TA", " LAB-06"]
+    T10_20 : ["MATHM-129", "MBH", 304],
+    T11_40 : ["EENG-122", "TA", " LAB-06"]
 };
 const tuesday = {
-    T08_30 : ["CSEC-121", "IZA", " LAB-1"],
-    T10_00 : ["MATHM-123", "NAD", " EEE-703"],
-    T11_30 : ["EENG-121", "TA", " EEE-703"]
+    T09_00 : ["CSEC-121", "IZA", " LAB-1"],
+    T10_20 : ["MATHM-123", "NAD", " EEE-703"],
+    T11_40 : ["EENG-121", "TA", " EEE-703"]
 };
 const wednesday = {
-    T11_30 : ["MATHM-129", "MBH", 604],
+    T11_40 : ["MATHM-129", "MBH", 604],
     T02_00 : ["MATHM-123", "NAD", 603],
-    T03_30 : ["CSEC-122", "IZA", " LAB-08"]
+    T03_20 : ["CSEC-122", "IZA", " LAB-08"]
 };
 const thursday = {
-    T08_30 : ["EENG-122", "TA", " LAB-06"],
-    T10_00 : ["CSEC-122", "IZA", " LAB-08"],
-    T11_30 : ["EENG-121", "TA", 102],
+    T09_00 : ["EENG-122", "TA", " LAB-06"],
+    T10_20 : ["CSEC-122", "IZA", " LAB-08"],
+    T11_40 : ["EENG-121", "TA", 102],
     T02_00 : ["CSEC-121", "IZA", 603]
 };
-const month = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const runUp = document.querySelector(".run-up");
 const clsCode = document.querySelector(".cls-code");
@@ -53,20 +52,20 @@ function main() {
     const d = new Date();
     const day = d.getDay();
 
-    let clsT08_30 = new Date();
-    clsT08_30.setHours(8);clsT08_30.setMinutes(30);clsT08_30.setSeconds(0);
-    let miliT08_30 = clsT08_30 - d;
-    let remainT08_30 = new Date(miliT08_30);
+    let clsT09_00 = new Date();
+    clsT09_00.setHours(9);clsT09_00.setMinutes(0);clsT09_00.setSeconds(0);
+    let miliT09_00 = clsT09_00 - d;
+    let remainT09_00 = new Date(miliT09_00);
     
-    let clsT10_00 = new Date();
-    clsT10_00.setHours(10);clsT10_00.setMinutes(0);clsT10_00.setSeconds(0);
-    let miliT10_00 = clsT10_00 - d;
-    let remainT10_00 = new Date(miliT10_00);
+    let clsT10_20 = new Date();
+    clsT10_20.setHours(10);clsT10_20.setMinutes(20);clsT10_20.setSeconds(0);
+    let miliT10_20 = clsT10_20 - d;
+    let remainT10_20 = new Date(miliT10_20);
 
-    let clsT11_30 = new Date();
-    clsT11_30.setHours(11);clsT11_30.setMinutes(30);clsT11_30.setSeconds(0);
-    let miliT11_30 = clsT11_30 - d;
-    let remainT11_30 = new Date(miliT11_30);
+    let clsT11_40 = new Date();
+    clsT11_40.setHours(11);clsT11_40.setMinutes(40);clsT11_40.setSeconds(0);
+    let miliT11_40 = clsT11_40 - d;
+    let remainT11_40 = new Date(miliT11_40);
 
     let clsT01_00 = new Date();
     clsT01_00.setHours(13);clsT01_00.setMinutes(0);clsT01_00.setSeconds(0);
@@ -78,15 +77,15 @@ function main() {
     let miliT02_00 = clsT02_00 - d;
     let remainT02_00 = new Date(miliT02_00);
 
-    let clsT03_30 = new Date();
-    clsT03_30.setHours(15);clsT03_30.setMinutes(30);clsT03_30.setSeconds(0);
-    let miliT03_30 = clsT03_30 - d;
-    let remainT03_30 = new Date(miliT03_30);
+    let clsT03_20 = new Date();
+    clsT03_20.setHours(15);clsT03_20.setMinutes(20);clsT03_20.setSeconds(0);
+    let miliT03_20 = clsT03_20 - d;
+    let remainT03_20 = new Date(miliT03_20);
 
-    let clsT05_00 = new Date();
-    clsT05_00.setHours(17);clsT05_00.setMinutes(0);clsT05_00.setSeconds(0);
-    let miliT05_00 = clsT05_00 - d;
-    let remainT05_00 = new Date(miliT05_00);
+    let clsT04_40 = new Date();
+    clsT04_40.setHours(16);clsT04_40.setMinutes(40);clsT04_40.setSeconds(0);
+    let miliT04_40 = clsT04_40 - d;
+    let remainT04_40 = new Date(miliT04_40);
 
     function nextCardFunc(nextCard, nextCls, nextTeacher, nextRoom, remainNext) {
         nextCard.style.display = "block";
@@ -99,9 +98,9 @@ function main() {
         if (clsStatus == "Upcoming") {
             runUp.style.backgroundColor = "var(--yellow-color)";
         }
-	else {
-	    runUp.style.backgroundColor = "var(--green-color)";
-	}
+        else {
+            runUp.style.backgroundColor = "var(--green-color)";
+        }
         clsCode.innerHTML = clsnNow[0];
         teacher.innerHTML = clsnNow[1];
         room.innerHTML = clsnNow[2];
@@ -137,86 +136,86 @@ function main() {
     }
 
     if (day == 5) {
-        clsComponent("Upcoming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+        clsComponent("Upcoming", monday.T10_20, "Next Class", "Next Monday :: 10:20AM");
     }
     else if (day == 6) {
-        clsComponent("Upcoming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+        clsComponent("Upcoming", monday.T10_20, "Next Class", "Next Monday :: 10:20AM");
     }
     else if (day == 0) {
-        clsComponent("Upcoming", monday.T10_00, "Next Class", "Tomorrow :: 10:00AM");
+        clsComponent("Upcoming", monday.T10_20, "Next Class", "Tomorrow :: 10:20AM");
     }
     else if (day == 1) {
-        if (miliT10_00 > 0) {
-            clsComponent("Upcoming", monday.T10_00, "Start in", undefined, remainT10_00, monday.T10_00, monday.T11_30);
+        if (miliT10_20 > 0) {
+            clsComponent("Upcoming", monday.T10_20, "Start in", undefined, remainT10_20, monday.T10_20, monday.T11_40);
         }
-        else if (miliT11_30 > 0) {
-            clsComponent("Running", monday.T10_00, "End in", undefined, remainT11_30, monday.T11_30);
+        else if (miliT11_40 > 0) {
+            clsComponent("Running", monday.T10_20, "End in", undefined, remainT11_40, monday.T11_40);
         }
 	else if (miliT01_00 > 0) {
-            clsComponent("Running", monday.T11_30, "End in", undefined, remainT01_00);
+            clsComponent("Running", monday.T11_40, "End in", undefined, remainT01_00);
         }
         else if (miliT01_00 < 0) {
-            clsComponent("Upcoming", tuesday.T08_30, "Next Class", "Tomorrow :: 8:30AM");
+            clsComponent("Upcoming", tuesday.T09_00, "Next Class", "Tomorrow :: 9:00AM");
         }
     }
     else if (day == 2) {
-        if (miliT08_30 > 0) {
-            clsComponent("Upcoming", tuesday.T08_30, "Start in", undefined, remainT08_30, tuesday.T08_30, tuesday.T10_00, tuesday.T11_30)
+        if (miliT09_00 > 0) {
+            clsComponent("Upcoming", tuesday.T09_00, "Start in", undefined, remainT09_00, tuesday.T09_00, tuesday.T10_20, tuesday.T11_40)
         }
-        else if (miliT10_00 > 0) {
-            clsComponent("Running", tuesday.T08_30, "End in", undefined, remainT10_00, tuesday.T10_00, tuesday.T11_30);
+        else if (miliT10_20 > 0) {
+            clsComponent("Running", tuesday.T09_00, "End in", undefined, remainT10_20, tuesday.T10_20, tuesday.T11_40);
         }
-        else if (miliT11_30 > 0) {
-            clsComponent("Running", tuesday.T10_00, "End in", undefined, remainT11_30, tuesday.T11_30)
+        else if (miliT11_40 > 0) {
+            clsComponent("Running", tuesday.T10_20, "End in", undefined, remainT11_40, tuesday.T11_40)
         }
         else if (miliT01_00 > 0) {
-            clsComponent("Running", tuesday.T11_30, "End in", undefined, remainT01_00);
+            clsComponent("Running", tuesday.T11_40, "End in", undefined, remainT01_00);
         }
         else if (miliT01_00 < 0) {
-            clsComponent("Upcoming", wednesday.T11_30, "Next Class", "Tomorrow :: 11:30AM");
+            clsComponent("Upcoming", wednesday.T11_40, "Next Class", "Tomorrow :: 11:40AM");
         }
     }
     else if (day == 3) {
-        if (miliT11_30 > 0) {
-            clsComponent("Upcoming", wednesday.T11_30, "Start in", undefined, remainT11_30, wednesday.T11_30, wednesday.T02_00, wednesday.T03_30);
+        if (miliT11_40 > 0) {
+            clsComponent("Upcoming", wednesday.T11_40, "Start in", undefined, remainT11_40, wednesday.T11_40, wednesday.T02_00, wednesday.T03_20);
         }
         else if (miliT01_00 > 0) {
-            clsComponent("Running", wednesday.T11_30, "End in", undefined, remainT01_00, wednesday.T02_00, wednesday.T03_30);
+            clsComponent("Running", wednesday.T11_40, "End in", undefined, remainT01_00, wednesday.T02_00, wednesday.T03_20);
         }
         else if (miliT02_00 > 0) {
-            clsComponent("Upcoming", wednesday.T02_00, "Start in", undefined, remainT02_00, wednesday.T02_00, wednesday.T03_30);
+            clsComponent("Upcoming", wednesday.T02_00, "Start in", undefined, remainT02_00, wednesday.T02_00, wednesday.T03_20);
         }
-        else if (miliT03_30 > 0) {
-            clsComponent("Running", wednesday.T02_00, "End in", undefined, remainT03_30, wednesday.T03_30);
+        else if (miliT03_20 > 0) {
+            clsComponent("Running", wednesday.T02_00, "End in", undefined, remainT03_20, wednesday.T03_20);
         }
-        else if (miliT05_00 > 0) {
-            clsComponent("Running", wednesday.T03_30, "End in", undefined, remainT05_00);
+        else if (miliT04_40 > 0) {
+            clsComponent("Running", wednesday.T03_20, "End in", undefined, remainT04_40);
         }
-        else if (miliT05_00 < 0) {
-            clsComponent("Upcoming", thursday.T08_30, "Next Class", "Tomorrow :: 8:30AM");
+        else if (miliT04_40 < 0) {
+            clsComponent("Upcoming", thursday.T09_00, "Next Class", "Tomorrow :: 9:00AM");
         }
     }
     else if (day == 4) {
-        if (miliT08_30 > 0) {
-            clsComponent("Upcoming", thursday.T08_30, "Start in", undefined, remainT08_30, thursday.T08_30, thursday.T10_00, thursday.T11_30, thursday.T02_00);
+        if (miliT09_00 > 0) {
+            clsComponent("Upcoming", thursday.T09_00, "Start in", undefined, remainT09_00, thursday.T09_00, thursday.T10_20, thursday.T11_40, thursday.T02_00);
         }
-        else if (miliT10_00 > 0) {
-            clsComponent("Running", thursday.T08_30, "End in", undefined, remainT10_00, thursday.T10_00, thursday.T11_30, thursday.T02_00);
+        else if (miliT10_20 > 0) {
+            clsComponent("Running", thursday.T09_00, "End in", undefined, remainT10_20, thursday.T10_20, thursday.T11_40, thursday.T02_00);
         }
-        else if (miliT11_30 > 0) {
-            clsComponent("Running", thursday.T10_00, "End in", undefined, remainT11_30, thursday.T11_30, thursday.T02_00);
+        else if (miliT11_40 > 0) {
+            clsComponent("Running", thursday.T10_20, "End in", undefined, remainT11_40, thursday.T11_40, thursday.T02_00);
         }
         else if (miliT01_00 > 0) {
-            clsComponent("Running", thursday.T11_30, "End in", undefined, remainT01_00, thursday.T02_00);
+            clsComponent("Running", thursday.T11_40, "End in", undefined, remainT01_00, thursday.T02_00);
         }
         else if (miliT02_00 > 0) {
             clsComponent("Upcoming", thursday.T02_00, "Start in", undefined, remainT02_00, thursday.T02_00);
         }
-        else if (miliT03_30 > 0) {
-            clsComponent("Running", thursday.T02_00, "End in", undefined, remainT03_30);
+        else if (miliT03_20 > 0) {
+            clsComponent("Running", thursday.T02_00, "End in", undefined, remainT03_20);
         }
-        else if (miliT03_30 < 0) {
-            clsComponent("Upcoming", monday.T10_00, "Next Class", "Next Monday :: 10:00AM");
+        else if (miliT03_20 < 0) {
+            clsComponent("Upcoming", monday.T10_20, "Next Class", "Next Monday :: 10:20AM");
         }
     }
 };
