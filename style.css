@@ -32,6 +32,10 @@ a {
 ul {
     list-style-type: none;
 }
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
 
 /* Utility Classes */
 .container {
@@ -86,7 +90,7 @@ nav ul a:hover::after {
     margin-top: 50px;
     text-align: center;
 }
-.home-main .title, .routine-main .title, .batch-main .title {
+.home-main .title, .routine-main .title {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -236,34 +240,6 @@ th {
 td {
     background-color: #e3e3e3;
     font-weight: 500;
-}
-
-/* Batch Section */
-.batch-main {
-    margin-top: 80px;
-    text-align: center;
-    display: none;
-}
-.batch-main .change-area {
-    display: flex;
-    gap: 2rem;
-}
-.batch-main .change-area > * {
-    flex: 1;
-}
-.batch-main .change-area > * > * {
-    display: block;
-    margin: 0 auto;
-}
-.batch-main .change-area label {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-.batch-main .change-area select {
-    font-size: 1.2rem;
-    font-weight: 500;
-    width: 50px;
 }
 
 /* Footer */
