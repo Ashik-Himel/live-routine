@@ -148,13 +148,13 @@ function main() {
         if (miliT09_00 > 0) {
             clsComponent("Upcoming", monday.T09_00, "Start in", undefined, remainT09_00, monday.T09_00, monday.T10_20);
         }
-        else if (miliT11_40 > 0) {
+        else if (miliT10_20 > 0) {
             clsComponent("Running", monday.T09_00, "End in", undefined, remainT10_20, monday.T10_20);
         }
-	else if (miliT01_00 > 0) {
+	else if (miliT11_40 > 0) {
             clsComponent("Running", monday.T10_20, "End in", undefined, remainT11_40);
         }
-        else if (miliT01_00 < 0) {
+        else if (miliT11_40 < 0) {
             clsComponent("Upcoming", tuesday.T09_00, "Next Class", "Tomorrow :: 9:00AM");
         }
     }
