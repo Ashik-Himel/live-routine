@@ -159,7 +159,7 @@ function main() {
             clsComponent("Running", monday.T11_40, "End in", undefined, remainT01_00, monday.T02_00, monday.T03_20);
         }
         else if (miliT02_00 > 0) {
-            clsComponent("Upcomming", monday.T02_00, "Start in", undefined, remainT02_00, monday.T02_00, monday.T03_20);
+            clsComponent("Upcoming", monday.T02_00, "Start in", undefined, remainT02_00, monday.T02_00, monday.T03_20);
         }
         else if (miliT03_20 > 0) {
             clsComponent("Running", monday.T02_00, "End in", undefined, remainT03_20, monday.T03_20);
@@ -182,7 +182,7 @@ function main() {
             clsComponent("Running", tuesday.T11_40, "End in", undefined, remainT01_00, tuesday.T02_00, tuesday.T03_20);
         }
         else if (miliT02_00 > 0) {
-            clsComponent("Upcomming", tuesday.T02_00, "Start in", undefined, remainT02_00, tuesday.T02_00, tuesday.T03_20);
+            clsComponent("Upcoming", tuesday.T02_00, "Start in", undefined, remainT02_00, tuesday.T02_00, tuesday.T03_20);
         }
         else if (miliT03_20 > 0) {
             clsComponent("Running", tuesday.T02_00, "End in", undefined, remainT03_20, tuesday.T03_20);
@@ -205,7 +205,7 @@ function main() {
             clsComponent("Running", wednesday.T11_40, "End in", undefined, remainT01_00, wednesday.T02_00, wednesday.T03_20);
         }
         else if (miliT02_00 > 0) {
-            clsComponent("Upcomming", wednesday.T02_00, "Start in", undefined, remainT02_00, wednesday.T02_00, wednesday.T03_20);
+            clsComponent("Upcoming", wednesday.T02_00, "Start in", undefined, remainT02_00, wednesday.T02_00, wednesday.T03_20);
         }
         else if (miliT03_20 > 0) {
             clsComponent("Running", wednesday.T02_00, "End in", undefined, remainT03_20, wednesday.T03_20);
@@ -231,7 +231,7 @@ function main() {
             clsComponent("Running", thursday.T11_40, "End in", undefined, remainT01_00, thursday.T02_00);
         }
         else if (miliT02_00 > 0) {
-            clsComponent("Upcomming", thursday.T02_00, "Start in", undefined, remainT02_00, thursday.T02_00);
+            clsComponent("Upcoming", thursday.T02_00, "Start in", undefined, remainT02_00, thursday.T02_00);
         }
         else if (miliT03_20 > 0) {
             clsComponent("Running", thursday.T02_00, "End in", undefined, remainT03_20);
